@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "author": "affan wid",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb2", "top": -166.2, "left": -179.6, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 134.4, "left": 43.24, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -90,
+      "left": -82.6,
+      "attrs": { "color": "red", "flip": "" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -90,
+      "left": 109.4,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -90,
+      "left": 301.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -44.05,
+      "left": -57.6,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -44.05,
+      "left": 134.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -44.05,
+      "left": 326.4,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led2:A", "bb2:31b.f", "", [ "$bb" ] ],
+    [ "led2:C", "bb2:30b.f", "", [ "$bb" ] ],
+    [ "led1:A", "bb2:11b.f", "", [ "$bb" ] ],
+    [ "led1:C", "bb2:10b.f", "", [ "$bb" ] ],
+    [ "led3:A", "bb2:51b.f", "", [ "$bb" ] ],
+    [ "led3:C", "bb2:50b.f", "", [ "$bb" ] ],
+    [ "r1:1", "bb2:11b.g", "", [ "$bb" ] ],
+    [ "r1:2", "bb2:17b.g", "", [ "$bb" ] ],
+    [ "r2:1", "bb2:31b.g", "", [ "$bb" ] ],
+    [ "r2:2", "bb2:37b.g", "", [ "$bb" ] ],
+    [ "r3:1", "bb2:51b.g", "", [ "$bb" ] ],
+    [ "r3:2", "bb2:57b.g", "", [ "$bb" ] ],
+    [ "esp:4", "bb2:57b.j", "green", [ "h0" ] ],
+    [ "esp:GND.2", "bb2:bp.26", "black", [ "v0" ] ],
+    [ "bb2:30b.g", "bb2:bp.24", "red", [ "v0" ] ],
+    [ "bb2:10b.g", "bb2:bp.7", "red", [ "v0" ] ],
+    [ "bb2:50b.g", "bb2:bp.41", "red", [ "v0" ] ],
+    [ "bb2:17b.h", "esp:16", "green", [ "v134.4", "h172.8", "v153.6" ] ],
+    [ "bb2:37b.h", "esp:17", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
